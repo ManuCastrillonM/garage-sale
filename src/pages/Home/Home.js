@@ -1,5 +1,6 @@
 import logo from '../../logo.svg';
 import './Home.scss';
+import Footer from '../../components/Footer';
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
           Learn React
         </a>
       </header>
+      <Footer />
     </div>
   );
 }

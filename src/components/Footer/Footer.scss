@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+
+.Footer {
+  align-items: center;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+
+  &__anchor {
+    text-decoration: underline dotted;
+    text-underline-offset: 2px;
+  }
+
+  &__icon {
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+  }
+}

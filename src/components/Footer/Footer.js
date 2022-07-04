@@ -5,22 +5,26 @@ function Footer() {
     <footer className="Footer">
       <span className="Footer__icon">🍃</span>
       <p>
-        Creado por{' '}
+        Creado por
+        {' '}
         <a
           className="Footer__anchor"
           href="https://github.com/ManuCastrillonM"
           rel="noopener noreferrer"
         >
           Manu
-        </a>{' '}
-        y{' '}
+        </a>
+        {' '}
+        y
+        {' '}
         <a
           className="Footer__anchor"
           href="https://github.com/svargaslondono"
           rel="noopener noreferrer"
         >
           Sebas
-        </a>{' '}
+        </a>
+        {' '}
       </p>
       <span className="Footer__icon">🍃</span>
     </footer>

@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.header {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(2px);
+        background: url('../../../assets/images/header-background.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;        
+        background-position: center;
+        height: 600px;
+    }
+
+    &__title{
+        color: $background;
+        font-size: 90px;
+        text-shadow: 2px 2px 19px #777;
+    }
+}

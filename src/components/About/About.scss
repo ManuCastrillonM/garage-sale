@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.about {
+    margin: 30px auto;
+
+    @include lg-up {
+        margin: 60px auto;
+    }
+
+    &__note {
+        margin-top:10px;
+
+        &-title{
+            color: $primary;
+            font-weight: 600;
+        }
+
+    }
+
+    &__title {
+        color: $primary;
+        font-size: 3rem;
+        margin: 2rem;
+    }
+}

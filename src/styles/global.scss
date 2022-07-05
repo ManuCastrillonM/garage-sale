@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 * {
     margin: 0;
     padding: 0;
@@ -15,4 +17,12 @@ a {
 button {
     background: none;
     border: none;
+}
+
+body {
+    background-color: $background;
+}
+
+li {
+    list-style-type: none;
 }

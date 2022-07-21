@@ -2,25 +2,21 @@
 @import '../../styles/mixins.scss';
 
 .about {
-    margin: 30px auto;
+    background-color: $middle-red;
+    padding: 30px;
     text-align: center;
-
-    @include lg-up {
-        margin: 60px auto;
-    }
 
     &__note {
         margin-top:10px;
 
         &-title{
-            color: $middle-red;
+            color: $white;
             font-weight: 600;
         }
-
     }
 
     &__title {
-        color: $middle-red;
+        color: $white;
         font-size: 3rem;
         margin: 2rem;
     }

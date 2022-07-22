@@ -1,0 +1,20 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.card-list {
+  display: flex;
+  overflow-x: scroll;
+  padding: 2rem;
+
+  .card:not(:first-child) {
+    margin-left: 0.8rem;
+
+    @include sm-up {
+      margin-left: 1rem;
+    }
+
+    @include md-up {
+      margin-left: 1.5rem;
+    }
+  }
+}

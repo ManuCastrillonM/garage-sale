@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "Random",
+    "date_available": "01/08/2022",
+    "description": "Despiadada y cool",
+    "imageUrl": "https://www.nationalgeographic.com.es/medio/2020/09/07/vicugna-pacos_f31442a8_550x807.jpg",
+    "name": "Alpaca",
+    "status": "available",
+    "url": "https://es.wikipedia.org/wiki/Vicugna_pacos"
+  },
+  {
+    "id": 2,
+    "category": "Frutas",
+    "date_available": "01/08/2022",
+    "description": "No a todos les gusta",
+    "imageUrl": "https://blog.oncosalud.pe/hubfs/beneficios-de-la-guanabana-para-tu-salud-imagen-1-1.jpg",
+    "name": "Guanabana",
+    "status": "available",
+    "url": "https://es.wikipedia.org/wiki/Annona_muricata"
+  },
+  {
+    "id": 3,
+    "category": "Libros",
+    "date_available": "01/08/2022",
+    "description": "Pero igual lo queremos",
+    "imageUrl": "https://i.pinimg.com/474x/84/f8/6b/84f86b94a93bacdf27d0eee2e4d15147--childrens-books-book-covers.jpg",
+    "name": "El abuelo votó por Trump",
+    "status": "available",
+    "url": "https://es.wikipedia.org/wiki/Annona_muricata"
+  }
+]

@@ -19,6 +19,7 @@
         "react"
     ],
     "rules": {
+        "react/jsx-props-no-spreading": 0,
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": [
             "error",

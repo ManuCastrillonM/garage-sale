@@ -3,10 +3,10 @@
 
 .card {
   background-color: $white;
-  overflow: hidden;
+  min-width: 16rem;
   padding-top: 16rem;
   position: relative;
-  min-width: 16rem;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 1px 1px 4px $dark-blue;

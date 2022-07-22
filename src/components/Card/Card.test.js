@@ -3,9 +3,9 @@ import Card from './Card';
 
 const props = {
   category: 'Random',
-  date_available: '01/08/2022',
+  dateAvailable: '01/08/2022',
   description: 'Despiadada y cool',
-  image_url:
+  imageUrl:
     'https://www.nationalgeographic.com.es/medio/2020/09/07/vicugna-pacos_f31442a8_550x807.jpg',
   name: 'Alpaca',
   status: 'available',

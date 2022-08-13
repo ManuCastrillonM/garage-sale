@@ -2,12 +2,17 @@ import PropTypes from 'prop-types';
 import './Card.scss';
 
 function Card({
-  name, imageUrl, category, description,
+  name, category, coverImageIndex, description, images,
 }) {
-  const whatsAppUrl = `https://wa.me/573007004009?text=Hola!%20Me%20interesa%20un%20producto%20que%20tienes%20a%20la%20venta:%20${name}`;
+  const coverImage = images[coverImageIndex]?.fields?.file?.url || null;
+  const whatsAppUrl = `${process.env.REACT_APP_WHATSAPP_URL}?text=Hola!%20Me%20interesa%20un%20producto%20que%20tienes%20a%20la%20venta:%20${name}`;
   return (
     <div className="card">
-      <img className="card__image" src={imageUrl} alt={name} />
+      {coverImage ? (
+        <img className="card__image" src={coverImage} alt={name} />
+      ) : (
+        <div className="card__image card__image--empty">{name}</div>
+      )}
       <div className="card__content">
         <span className="card__category">{category}</span>
         <span className="card__name">{name}</span>
@@ -26,9 +31,14 @@ function Card({
 }
 Card.propTypes = {
   name: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  coverImageIndex: PropTypes.number,
   description: PropTypes.string.isRequired,
+  images: PropTypes.any.isRequired,
+};
+
+Card.defaultProps = {
+  coverImageIndex: 0,
 };
 
 export default Card;

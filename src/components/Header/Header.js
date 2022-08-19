@@ -25,18 +25,20 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header__container">
-        <h1 className="header__title">
-          La tiendita
-          {' '}
-          <br />
-          {' '}
-          de Mango
-        </h1>
-        <a className="header__cta" href="/">Ver productos</a>
-      </div>
-      <div className="header__image-container">
-        <img className="header__image" onMouseEnter={(e) => animateHeader(e)} onMouseLeave={(e) => animateHeader(e)} src={headerImg} alt="Mango" styles="" />
+      <div className="header__container container">
+        <div className="header__content">
+          <h1 className="header__title">
+            La tiendita
+            {' '}
+            <br />
+            {' '}
+            de Mango
+          </h1>
+          <a className="header__cta" href="/">Ver productos</a>
+        </div>
+        <div className="header__image-container">
+          <img className="header__image" onMouseEnter={(e) => animateHeader(e)} onMouseLeave={(e) => animateHeader(e)} src={headerImg} alt="Mango" styles="" />
+        </div>
       </div>
     </header>
   );

@@ -2,7 +2,7 @@
 @import '../../styles/mixins.scss';
 
 .about {
-    background-color: $middle-red;
+    background-color: $white;
     padding: 30px;
     text-align: center;
 
@@ -10,13 +10,13 @@
         margin-top:10px;
 
         &-title{
-            color: $white;
+            color: $middle-red;
             font-weight: 600;
         }
     }
 
     &__title {
-        color: $white;
+        color: $middle-red;
         font-size: 3rem;
         margin: 2rem;
     }

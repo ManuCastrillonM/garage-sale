@@ -2,33 +2,43 @@
 @import '../../styles/mixins.scss';
 
 .header {
-    display: flex;
-    align-items: center;
-    flex-direction: column-reverse;
-    justify-content: center;
-    padding: 15px;
+    background: $white;
+    max-height: 800px;
     height: 100vh;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: 100%;
+        padding: 15px;
+
 
     @include md-up {
         flex-direction: row;
         padding: 30px;
     }
+    }
 
-    &__container {
+    &__content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
         justify-content: center;
 
+        text-align: center;
+
         @include md-up {
-            align-items: flex-start;
+            align-items: flex-end;
+            flex-basis: 50%;
             text-align: left;
         }
     }
 
     &__cta {
         background: $middle-red;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         color: white;
         font-weight: 600;
         margin-top: 20px;
@@ -39,13 +49,26 @@
         transition: transform 0.1s ease-in-out;
 
         &-container {
-            width: 45%;
+            @include md-up {
+                flex-basis: 50%;
+            }
+            
         }
     }
 
     &__title{
         color: $middle-red;
         font-family: 'Satisfy', cursive;
-        font-size: 5em;
+        font-size: 4em;
+        text-align: right;
+        text-shadow: 2px 2px 1px rgb(173 173 173 / 37%);
+
+        @include md-up {
+            font-size: 5em;
+        }
+
+        @include lg-up {
+            font-size: 7em;
+        }
     }
 }

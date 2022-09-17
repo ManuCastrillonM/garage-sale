@@ -3,18 +3,32 @@
 
 .card-list {
   display: flex;
-  overflow-x: scroll;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: auto;
   padding: 2rem;
 
-  .card:not(:first-child) {
-    margin-left: 0.8rem;
+  @include sm-up {
+    gap: 1rem;
+  }
+
+  @include md-up {
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex-basis: 100%;
 
     @include sm-up {
-      margin-left: 1rem;
+      flex-basis: 50%;
     }
 
     @include md-up {
-      margin-left: 1.5rem;
+      flex-basis: calc(100% / 3);
+    }
+
+    @include lg-up {
+      flex-basis: 25%;
     }
   }
 }

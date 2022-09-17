@@ -37,7 +37,7 @@ function Header() {
           <a className="header__cta" href="/">Ver productos</a>
         </div>
         <div className="header__image-container">
-          <img className="header__image" onMouseEnter={(e) => animateHeader(e)} onMouseLeave={(e) => animateHeader(e)} src={headerImg} alt="Mango" styles="" />
+          <img className="header__image" onMouseEnter={(e) => animateHeader(e)} onMouseLeave={(e) => animateHeader(e)} src={headerImg} alt="Mango's face" />
         </div>
       </div>
     </header>

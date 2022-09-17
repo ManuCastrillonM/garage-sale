@@ -1,43 +1,43 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 .about {
-    background-color: $white;
-    padding: 30px;
-    text-align: center;
+  background-color: $white;
+  padding: 30px;
+  text-align: center;
 
-    &__list {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-        &-item {
-            margin: 20px;
-            max-width: 220px;
-            transition: all 0.05s ease-in;
+    &-item {
+      margin: 20px;
+      max-width: 220px;
+      transition: all 0.05s ease-in;
 
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__step {
+    &-description {
+      font-size: 18px;
     }
 
-    &__step {
-        &-description {
-            font-size: 18px;
-        }
-
-        &-title {
-            color: $middle-red;
-            font-size: 5em;
-            font-weight: 700;
-            user-select: none;
-        }
+    &-title {
+      color: $middle-red;
+      font-size: 5em;
+      font-weight: 700;
+      user-select: none;
     }
+  }
 
-    &__title {
-        color: $middle-red;
-        font-size: 3rem;
-        margin: 2rem;
-    }
+  &__title {
+    color: $middle-red;
+    font-size: 3rem;
+    margin: 2rem;
+  }
 }

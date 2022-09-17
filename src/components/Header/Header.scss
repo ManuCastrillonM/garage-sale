@@ -29,12 +29,6 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
-
-        @include md-up {
-            align-items: flex-end;
-            flex-basis: 50%;
-            text-align: left;
-        }
     }
 
     &__cta {
@@ -50,12 +44,11 @@
         transition: transform 0.1s ease-in-out;
 
         &-container {
-            margin-left: 25px;
             max-width: 250px;
 
             @include md-up {
+                margin-left: 25px;
                 max-width: 400px;
-                flex-basis: 50%;
             }
 
         }
@@ -63,13 +56,14 @@
 
     &__title {
         color: black;
-        font-family: 'Satisfy', cursive;
+        font-family: 'Rubik', sans-serif;
         font-size: 4em;
-        text-align: right;
+        text-align: center;
         text-shadow: 2px 2px 1px rgb(173 173 173 / 37%);
 
         @include md-up {
             font-size: 5em;
+            text-align: right;
         }
 
         @include lg-up {

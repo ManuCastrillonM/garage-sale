@@ -2,8 +2,10 @@
 @import '../../styles/mixins.scss';
 
 .header {
-    background: $white;
-    max-height: 800px;
+    background-image: url('../../assets/images/header_background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 600px;
     height: 100vh;
 
     &__container {
@@ -15,18 +17,17 @@
         padding: 15px;
 
 
-    @include md-up {
-        flex-direction: row;
-        padding: 30px;
-    }
+        @include md-up {
+            flex-direction: row;
+            padding: 30px;
+        }
     }
 
     &__content {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-
+        flex-direction: column;
         text-align: center;
 
         @include md-up {
@@ -38,9 +39,9 @@
 
     &__cta {
         background: $middle-red;
+        border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         color: white;
-        font-weight: 600;
         margin-top: 20px;
         padding: 10px 15px;
     }
@@ -49,15 +50,19 @@
         transition: transform 0.1s ease-in-out;
 
         &-container {
+            margin-left: 25px;
+            max-width: 250px;
+
             @include md-up {
+                max-width: 400px;
                 flex-basis: 50%;
             }
-            
+
         }
     }
 
-    &__title{
-        color: $middle-red;
+    &__title {
+        color: black;
         font-family: 'Satisfy', cursive;
         font-size: 4em;
         text-align: right;
@@ -68,7 +73,7 @@
         }
 
         @include lg-up {
-            font-size: 7em;
+            font-size: 6em;
         }
     }
 }

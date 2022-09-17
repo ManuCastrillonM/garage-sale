@@ -1,9 +1,9 @@
 @import './variables.scss';
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -26,4 +26,13 @@ body {
 
 li {
     list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
 }

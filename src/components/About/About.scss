@@ -2,21 +2,37 @@
 @import '../../styles/mixins.scss';
 
 .about {
-    margin: 30px auto;
+    background-color: $white;
+    padding: 30px;
     text-align: center;
 
-    @include lg-up {
-        margin: 60px auto;
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &-item {
+            margin: 20px;
+            max-width: 220px;
+            transition: all 0.05s ease-in;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
     }
 
-    &__note {
-        margin-top:10px;
-
-        &-title{
-            color: $middle-red;
-            font-weight: 600;
+    &__step {
+        &-description {
+            font-size: 18px;
         }
 
+        &-title {
+            color: $middle-red;
+            font-size: 5em;
+            font-weight: 700;
+            user-select: none;
+        }
     }
 
     &__title {

@@ -4,17 +4,19 @@ function About() {
   const steps = [
     'Cuentanos que productos te interesan',
     'Te compartimos el número de cuenta para realizar el pago',
-    'Puedes recoger el producto (no nos encargamos del envío)',
+    'Puedes recoger el producto a partir de la fecha marcada como disponible',
   ];
 
   return (
-    <section className="about">
+    <section className="about container">
       <h1 className="about__title">¿Como comprar?</h1>
-      <ul>
+      <ul className="about__list">
         {steps.map((step, index) => (
-          <li key={step}>
-            {`${index + 1}. `}
-            {step}
+          <li key={step} className="about__list-item">
+            <div>
+              <span className="about__step-title">{`${index + 1}`}</span>
+              <p className="about__step-description">{step}</p>
+            </div>
           </li>
         ))}
       </ul>

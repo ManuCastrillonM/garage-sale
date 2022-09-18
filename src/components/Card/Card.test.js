@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Card from './Card';
 
 const props = {
-  category: 'Random',
+  categories: ['Random'],
   dateAvailable: '01/08/2022',
   description: 'Despiadada y cool',
   imageUrl:

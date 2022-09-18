@@ -1,0 +1,34 @@
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.products-banner {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba($turquoise-green, 0.2),
+      rgba($turquoise-green, 0.2) 1rem,
+      $white 1rem,
+      $white 2rem
+    );
+  color: $dark-gray;
+  display: flex;
+  padding: 8rem 4rem;
+  text-align: center;
+
+  &__content {
+    @extend %container;
+
+    background-color: $white;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__description {
+    font-size: 1.125rem;
+    margin: 1rem 0 0;
+  }
+}

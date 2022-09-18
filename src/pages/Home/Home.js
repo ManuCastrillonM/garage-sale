@@ -4,10 +4,14 @@ import About from '../../components/About/About';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import CardList from '../../components/CardList/CardList';
+import ProductsBanner from '../../components/ProductsBanner/ProductsBanner';
 
 const contentful = require('contentful');
 
 function Home() {
+  const queryParams = new URLSearchParams(window.location.search);
+  const key = queryParams.get('key') === process.env.REACT_APP_QUERY_KEY;
+
   const client = contentful.createClient({
     space: process.env.REACT_APP_CONTENTFUL_SPACE,
     accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
@@ -28,7 +32,11 @@ function Home() {
       <div className="home__content">
         <Header />
         <About />
-        <CardList items={products} />
+        { key ? (
+          <CardList items={products} />
+        ) : (
+          <ProductsBanner />
+        )}
       </div>
       <Footer />
     </div>

@@ -3,7 +3,7 @@ import './About.scss';
 function About() {
   const steps = [
     'Cuentanos que productos te interesan',
-    'Te compartimos el número de cuenta para realizar el pago',
+    'Te compartimos el número de cuenta para realizar el pago*',
     'Puedes recoger el producto a partir de la fecha marcada como disponible',
   ];
 
@@ -21,9 +21,7 @@ function About() {
         ))}
       </ul>
       <p className="about__note">
-        <span className="about__note-title">nota:</span>
-        {' '}
-        Los precios no incluyen costos de envío
+        *Los precios no incluyen costos de envío
       </p>
     </section>
   );

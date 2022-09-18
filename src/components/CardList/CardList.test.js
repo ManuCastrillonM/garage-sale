@@ -2,24 +2,24 @@ import { render } from '@testing-library/react';
 import CardList from './CardList';
 
 const items = [
-  { 
+  {
     fields: {
       name: 'Cama',
-      categories: ['Habitación']
+      categories: ['Habitación'],
     },
     sys: {
-      id: 1
-    }
+      id: 1,
+    },
   },
   {
     fields: {
       name: 'Olla',
-      categories: ['Cocina']
+      categories: ['Cocina'],
     },
     sys: {
-      id: 2
-    }
-  }
+      id: 2,
+    },
+  },
 ];
 
 test('renders a list of cards for the items provided', () => {

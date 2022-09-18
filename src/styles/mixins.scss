@@ -1,15 +1,15 @@
 @mixin sm-up {
-    @media (min-width: 480px) { @content; }
+  @media (min-width: 480px) { @content; }
 }
 
 @mixin md-up {
-    @media (min-width: 768px) { @content; }
+  @media (min-width: 768px) { @content; }
 }
 
 @mixin lg-up {
-    @media (min-width: 1024px) { @content; }
+  @media (min-width: 1024px) { @content; }
 }
 
 @mixin xl-up {
-    @media (min-width: 1280px) { @content; }
+  @media (min-width: 1280px) { @content; }
 }

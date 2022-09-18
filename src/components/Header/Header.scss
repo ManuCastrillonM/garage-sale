@@ -1,73 +1,71 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 .header {
-    background-image: url('../../assets/images/header_background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    max-height: 600px;
-    height: 100vh;
+  background-image: url("../../assets/images/header_background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-height: 600px;
+  height: 100vh;
 
-    &__container {
-        display: flex;
-        align-items: center;
-        flex-direction: column-reverse;
-        justify-content: center;
-        height: 100%;
-        padding: 15px;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 100%;
+    padding: 15px;
 
+    @include md-up {
+      flex-direction: row;
+      padding: 30px;
+    }
+  }
 
-        @include md-up {
-            flex-direction: row;
-            padding: 30px;
-        }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__cta {
+    background: $middle-red;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 15px;
+  }
+
+  &__image {
+    transition: transform 0.1s ease-in-out;
+
+    &-container {
+      max-width: 250px;
+
+      @include md-up {
+        margin-left: 25px;
+        max-width: 400px;
+      }
+    }
+  }
+
+  &__title {
+    color: black;
+    font-family: Rubik, sans-serif;
+    font-size: 4em;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgb(173 173 173 / 37%);
+
+    @include md-up {
+      font-size: 5em;
+      text-align: right;
     }
 
-    &__content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
+    @include lg-up {
+      font-size: 6em;
     }
-
-    &__cta {
-        background: $middle-red;
-        border-radius: 4px;
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        color: white;
-        margin-top: 20px;
-        padding: 10px 15px;
-    }
-
-    &__image {
-        transition: transform 0.1s ease-in-out;
-
-        &-container {
-            max-width: 250px;
-
-            @include md-up {
-                margin-left: 25px;
-                max-width: 400px;
-            }
-
-        }
-    }
-
-    &__title {
-        color: black;
-        font-family: 'Rubik', sans-serif;
-        font-size: 4em;
-        text-align: center;
-        text-shadow: 2px 2px 1px rgb(173 173 173 / 37%);
-
-        @include md-up {
-            font-size: 5em;
-            text-align: right;
-        }
-
-        @include lg-up {
-            font-size: 6em;
-        }
-    }
+  }
 }

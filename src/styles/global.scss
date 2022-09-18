@@ -1,13 +1,13 @@
-@import './variables.scss';
+@import "./variables";
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  font-family: 'Kantumruy Pro', sans-serif;
+  font-family: "Kantumruy Pro", sans-serif;
 }
 
 a {
@@ -21,18 +21,18 @@ button {
 }
 
 body {
-    background-color: $white;
+  background-color: $white;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .container {
-    margin: 0 auto;
-    max-width: 1440px;
+  margin: 0 auto;
+  max-width: 1440px;
 }

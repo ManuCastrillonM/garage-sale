@@ -2,13 +2,13 @@ import './Footer.scss';
 
 function Footer() {
   return (
-    <footer className="Footer">
-      <span className="Footer__icon">🍃</span>
+    <footer className="footer">
+      <span className="footer__icon">🍃</span>
       <p>
         Creado por
         {' '}
         <a
-          className="Footer__anchor"
+          className="footer__anchor"
           href="https://github.com/ManuCastrillonM"
           rel="noopener noreferrer"
         >
@@ -18,7 +18,7 @@ function Footer() {
         y
         {' '}
         <a
-          className="Footer__anchor"
+          className="footer__anchor"
           href="https://github.com/svargaslondono"
           rel="noopener noreferrer"
         >
@@ -26,7 +26,7 @@ function Footer() {
         </a>
         {' '}
       </p>
-      <span className="Footer__icon">🍃</span>
+      <span className="footer__icon">🍃</span>
     </footer>
   );
 }

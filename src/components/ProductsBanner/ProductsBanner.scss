@@ -1,3 +1,4 @@
+@import "../../styles/global";
 @import "../../styles/mixins";
 @import "../../styles/variables";
 
@@ -16,6 +17,8 @@
   text-align: center;
 
   &__content {
+    @extend %container;
+
     background-color: $white;
     padding: 2rem;
   }

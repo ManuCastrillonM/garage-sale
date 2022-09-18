@@ -32,7 +32,8 @@ img {
   max-width: 100%;
 }
 
-.container {
+.container,
+%container {
   margin: 0 auto;
   max-width: 1440px;
 }

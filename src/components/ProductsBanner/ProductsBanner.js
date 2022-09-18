@@ -3,9 +3,9 @@ import './ProductsBanner.scss';
 function ProductsBanner() {
   return (
     <section className="products-banner">
-      <div className="products-banner__content container">
+      <div className="products-banner__content">
         <h2 className="products-banner__title">
-          Proximamente
+          Próximamente
         </h2>
         <p className="products-banner__description">
           Pronto encontrarás los productos disponibles en este espacio

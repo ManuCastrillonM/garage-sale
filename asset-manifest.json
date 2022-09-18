@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/garage-sale/static/css/main.a5cf08c4.css",
-    "main.js": "/garage-sale/static/js/main.799df4aa.js",
+    "main.js": "/garage-sale/static/js/main.4c0e6854.js",
     "static/js/787.07c740fa.chunk.js": "/garage-sale/static/js/787.07c740fa.chunk.js",
     "static/media/header-image.png": "/garage-sale/static/media/header-image.148e2aea660784c4e9be.png",
     "static/media/header_background.svg": "/garage-sale/static/media/header_background.7f9398c573c7c6729707.svg",
     "index.html": "/garage-sale/index.html",
     "main.a5cf08c4.css.map": "/garage-sale/static/css/main.a5cf08c4.css.map",
-    "main.799df4aa.js.map": "/garage-sale/static/js/main.799df4aa.js.map",
+    "main.4c0e6854.js.map": "/garage-sale/static/js/main.4c0e6854.js.map",
     "787.07c740fa.chunk.js.map": "/garage-sale/static/js/787.07c740fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a5cf08c4.css",
-    "static/js/main.799df4aa.js"
+    "static/js/main.4c0e6854.js"
   ]
 }

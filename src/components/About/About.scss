@@ -3,7 +3,7 @@
 
 .about {
   background-color: $white;
-  padding: 30px;
+  padding: 60px 30px;
   text-align: center;
 
   &__list {
@@ -14,10 +14,10 @@
     &-item {
       margin: 20px;
       max-width: 220px;
-      transition: all 0.05s ease-in;
+      transition: all 0.2s ease-in;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
   }
@@ -38,6 +38,7 @@
   &__title {
     color: $middle-red;
     font-size: 3rem;
-    margin: 2rem;
+    line-height: 3rem;
+    margin: 0 2rem 2rem;
   }
 }

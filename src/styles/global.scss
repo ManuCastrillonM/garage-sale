@@ -18,6 +18,8 @@ a {
 button {
   background: none;
   border: none;
+  cursor: pointer;
+  font-family: "Kantumruy Pro", sans-serif;
 }
 
 body {
@@ -36,4 +38,8 @@ img {
 %container {
   margin: 0 auto;
   max-width: 1440px;
+}
+
+.hidden {
+  display: none;
 }

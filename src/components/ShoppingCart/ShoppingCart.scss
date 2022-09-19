@@ -1,0 +1,74 @@
+@import "../../styles/variables";
+
+.shopping-cart {
+  background: $white;
+  box-shadow: -2px -2px 3px 0 #8080802e;
+  height: 100%;
+  padding: 30px;
+  position: fixed;
+  right: 0;
+  width: 500px;
+  z-index: 1;
+
+  &__button {
+    background: $middle-red;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+    color: $white;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  &__close {
+    &::after {
+      content: "";
+      font-size: 1.5em;
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      width: 20px;
+      background: black;
+      height: 2px;
+      transform: rotate(-45deg);
+    }
+
+    &::before {
+      content: "";
+      font-size: 1.5em;
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      width: 20px;
+      background: black;
+      height: 2px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__item {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+
+  &__overlay {
+    background: rgb(0 0 0 / 40%);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__title {
+    border-bottom: 1px solid $light-cornflower-blue;
+    color: $light-cornflower-blue;
+    font-family: Rubik, sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  &__total {
+    font-size: 1.2em;
+    margin: 15px 0;
+  }
+}

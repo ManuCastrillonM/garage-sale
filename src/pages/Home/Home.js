@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 
 import About from '../../components/About/About';
+import CardList from '../../components/CardList/CardList';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-import CardList from '../../components/CardList/CardList';
+import Navigation from '../../components/Navigation/Navigation';
 import ProductsBanner from '../../components/ProductsBanner/ProductsBanner';
+import ShoppingCart from '../../components/ShoppingCart/ShoppingCart';
 
 const contentful = require('contentful');
 
@@ -30,6 +32,8 @@ function Home() {
   return (
     <div className="home">
       <div className="home__content">
+        <ShoppingCart />
+        <Navigation />
         <Header />
         <About />
         { key ? (

@@ -1,11 +1,14 @@
 import './ShoppingCart.scss';
+import { useState } from 'react';
 import whatsappIcon from '../../assets/icons/whatsapp.svg';
 
 function ShoppingCart() {
+  const [showCart] = useState(true);
+
   return (
     <>
-      <div className="shopping-cart__overlay" />
-      <div className="shopping-cart">
+      {showCart && <div className="shopping-cart__overlay" />}
+      <div className={`shopping-cart ${showCart ? 'shopping-cart--visible' : ''}`}>
         <button type="button" className="shopping-cart__close"><span className="hidden">close</span></button>
         <h1 className="shopping-cart__title">Productos que te interesan</h1>
         <ul>

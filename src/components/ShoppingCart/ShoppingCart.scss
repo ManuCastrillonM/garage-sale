@@ -1,14 +1,46 @@
 @import "../../styles/variables";
 
 .shopping-cart {
+  $this: &;
+
   background: $white;
   box-shadow: -2px -2px 3px 0 #8080802e;
   height: 100%;
-  padding: 30px;
   position: fixed;
   right: 0;
-  width: 500px;
+  width: 0;
   z-index: 1;
+
+  &--visible {
+    padding: 30px;
+    width: 500px;
+
+    #{$this}__close {
+      &::after {
+        content: "";
+        font-size: 1.5em;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 20px;
+        background: black;
+        height: 2px;
+        transform: rotate(-45deg);
+      }
+
+      &::before {
+        content: "";
+        font-size: 1.5em;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 20px;
+        background: black;
+        height: 2px;
+        transform: rotate(45deg);
+      }
+    }
+  }
 
   &__button {
     background: $middle-red;
@@ -18,32 +50,6 @@
     display: flex;
     align-items: center;
     padding: 10px 15px;
-  }
-
-  &__close {
-    &::after {
-      content: "";
-      font-size: 1.5em;
-      position: absolute;
-      right: 30px;
-      top: 30px;
-      width: 20px;
-      background: black;
-      height: 2px;
-      transform: rotate(-45deg);
-    }
-
-    &::before {
-      content: "";
-      font-size: 1.5em;
-      position: absolute;
-      right: 30px;
-      top: 30px;
-      width: 20px;
-      background: black;
-      height: 2px;
-      transform: rotate(45deg);
-    }
   }
 
   &__item {

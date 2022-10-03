@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.nav {
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  &__cart {
+    align-items: center;
+    background: $middle-red;
+    border-radius: 10px;
+    color: $white;
+    display: flex;
+    padding: 6px 14px;
+
+    &-img {
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    &-count {
+      font-size: 18px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: end;
+  }
+}

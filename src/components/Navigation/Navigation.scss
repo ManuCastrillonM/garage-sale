@@ -7,11 +7,11 @@
   z-index: 1;
 
   &__cart {
+    align-items: center;
     background: $middle-red;
     border-radius: 10px;
     color: $white;
     display: flex;
-    align-items: center;
     padding: 6px 14px;
 
     &-img {

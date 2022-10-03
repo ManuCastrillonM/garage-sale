@@ -1,14 +1,20 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .shopping-cart {
   background: $white;
-  box-shadow: -2px -2px 3px 0 #80808015;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: 30px;
   position: fixed;
   right: 0;
-  width: 500;
-  z-index: 1;
+  width: 100%;
+  z-index: 2;
+
+  @include md-up {
+    width: 500px;
+  }
 
   &__close {
     &::after {
@@ -48,6 +54,10 @@
     }
   }
 
+  &__content {
+    flex-grow: 1;
+  }
+
   &__button {
     background: $middle-red;
     border-radius: 4px;
@@ -59,13 +69,17 @@
     width: fit-content;
   }
 
+  &__footer {
+    align-self: flex-end;
+  }
+
   &__item {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     margin-bottom: 15px;
   }
 
   &__overlay {
-    background: rgba(213, 213, 213, 0.4);
+    background: rgb(213 213 213 / 40%);
     height: 100%;
     position: fixed;
     width: 100%;
@@ -76,12 +90,7 @@
     border-bottom: 1px solid $light-cornflower-blue;
     color: $light-cornflower-blue;
     font-family: Rubik, sans-serif;
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 20px;
-  }
-
-  &__total {
-    font-size: 1.2em;
-    margin: 15px 0;
   }
 }

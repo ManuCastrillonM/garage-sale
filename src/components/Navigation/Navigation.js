@@ -15,7 +15,7 @@ function Navigation() {
           <li>
             <button type="button" className="nav__cart" onClick={() => setShowShoppingCart(true)} data-testid="nav-cart-cta">
               <img className="nav__cart-img" src={cartImage} alt="carro de compras" />
-              <span className="nav__cart-num">0</span>
+              <span className="nav__cart-count">0</span>
             </button>
           </li>
         </ul>

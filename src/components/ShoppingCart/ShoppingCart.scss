@@ -37,7 +37,7 @@
     align-items: center;
     background: $middle-red;
     border-radius: 4px;
-    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+    box-shadow: rgb(0 0 0 / 15%) 2px 2px 2.5px;
     color: $white;
     display: flex;
     justify-content: center;
@@ -54,7 +54,7 @@
   }
 
   &__overlay {
-    background: rgb(213 213 213 / 40%);
+    background: rgba($dark-gray, 20%);
     height: 100%;
     opacity: 0;
     transition: opacity 0.7s ease;

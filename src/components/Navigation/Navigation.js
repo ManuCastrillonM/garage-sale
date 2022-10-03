@@ -9,7 +9,7 @@ function Navigation() {
 
   return (
     <>
-      {showShoppingCart && <ShoppingCart handleClose={() => setShowShoppingCart(false)} />}
+      <ShoppingCart handleClose={() => setShowShoppingCart(false)} isOpen={showShoppingCart} />
       <nav className="nav">
         <ul className="nav__list">
           <li>

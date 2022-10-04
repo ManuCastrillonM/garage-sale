@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Navigation from '../../components/Navigation/Navigation';
 import ProductsBanner from '../../components/ProductsBanner/ProductsBanner';
+import ProductModal from '../../components/ProductModal/ProductModal';
 
 const contentful = require('contentful');
 
@@ -34,11 +35,15 @@ function Home() {
         <Navigation />
         <Header />
         <About />
-        { key ? (
+        {key ? (
           <CardList items={products} />
         ) : (
           <ProductsBanner />
         )}
+        {
+          products[0]
+          && <ProductModal {...products[0].fields} />
+        }
       </div>
       <Footer />
     </div>

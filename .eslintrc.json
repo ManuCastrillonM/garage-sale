@@ -22,6 +22,7 @@
         "react/jsx-props-no-spreading": "off",
         "react/react-in-jsx-scope": "off",
         "react/forbid-prop-types": "off",
+        "no-param-reassign": "off",
         "react/jsx-filename-extension": [
             "error",
             {

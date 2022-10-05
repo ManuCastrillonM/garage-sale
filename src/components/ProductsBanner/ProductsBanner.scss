@@ -13,14 +13,22 @@
     );
   color: $dark-gray;
   display: flex;
-  padding: 8rem 4rem;
+  padding: 4rem 2rem;
   text-align: center;
+
+  @include sm-up {
+    padding: 8rem 4rem;
+  }
 
   &__content {
     @extend %container;
 
     background-color: $white;
-    padding: 2rem;
+    padding: 1rem;
+
+    @include sm-up {
+      padding: 2rem;
+    }
   }
 
   &__title {

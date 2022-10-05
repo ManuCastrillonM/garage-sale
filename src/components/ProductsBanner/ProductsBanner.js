@@ -2,7 +2,7 @@ import './ProductsBanner.scss';
 
 function ProductsBanner() {
   return (
-    <section id="products" className="products-banner">
+    <section id="products" className="products-banner" data-testid="coming-soon">
       <div className="products-banner__content">
         <h2 className="products-banner__title">
           Próximamente

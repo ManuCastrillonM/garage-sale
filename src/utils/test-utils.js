@@ -2,7 +2,10 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 
 const wrappedElement = (element) => {
-  const initialState = { shoppingCart: { elements: [] } };
+  const initialState = {
+    shoppingCart: { elements: [] },
+    featureProduct: { product: null },
+  };
   const mockStore = configureStore(initialState);
   const store = mockStore(initialState);
 

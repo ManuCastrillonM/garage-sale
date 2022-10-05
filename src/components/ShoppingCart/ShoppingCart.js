@@ -2,7 +2,7 @@ import './ShoppingCart.scss';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import whatsappIcon from '../../assets/icons/whatsapp.svg';
-import { removeElement } from '../../features/shoppingCart/shoppingCartSlice';
+import { removeElement } from '../../features/shoppingCartSlice';
 
 function ShoppingCart({ isOpen, handleClose }) {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.elements);

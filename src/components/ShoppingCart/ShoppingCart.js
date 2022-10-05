@@ -4,24 +4,24 @@ import { useSelector } from 'react-redux';
 import whatsappIcon from '../../assets/icons/whatsapp.svg';
 
 function ShoppingCart({ isOpen, handleClose }) {
-  const shoppingItems = useSelector((state) => state.shoppingCart.elements);
+  const shoppingCartItems = useSelector((state) => state.shoppingCart.elements);
 
   const getWhatsappUrl = () => {
     const whatsAppUrl = `${process.env.REACT_APP_WHATSAPP_URL}?text=¡Hola!%20Me%20interesan%20estos%20productos%20que%20tienes%20a%20la%20venta:%20\n`;
-    const items = shoppingItems.map((item) => item).join('%20%2B%20');
+    const items = shoppingCartItems.map((item) => item).join('%20%2B%20');
 
     return `${whatsAppUrl}${items}`;
   };
 
   const shoppingCartContent = () => {
-    if (shoppingItems.length === 0) {
+    if (shoppingCartItems.length === 0) {
       return (<p>No tienes elementos en tu carrito de compras</p>);
     }
     return (
       <>
         <div className="shopping-cart__content">
           <ul>
-            {shoppingItems.map((item) => (
+            {shoppingCartItems.map((item) => (
               <li className="shopping-cart__item" key={item}>{item}</li>
             ))}
           </ul>

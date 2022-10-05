@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const shoppingCartSlice = createSlice({
-  name: 'counter',
+  name: 'ShoppingCart',
   initialState: {
     elements: [],
   },
@@ -10,7 +10,7 @@ export const shoppingCartSlice = createSlice({
       state.elements.push(action.payload);
     },
     removeElement: (state, action) => {
-      const index = state.elements.findIndex((element) => element.id === action.payload);
+      const index = state.elements.findIndex((element) => element === action.payload);
       state.elements.splice(index, 1);
     },
   },

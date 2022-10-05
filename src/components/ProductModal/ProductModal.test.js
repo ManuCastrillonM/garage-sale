@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ProductModal from './ProductModal';
+import wrappedElement from '../../utils/test-utils';
 
 test('renders the product modal', () => {
   const product = {
@@ -7,7 +8,7 @@ test('renders the product modal', () => {
     categories: [],
     status: 'available',
   };
-  render(<ProductModal {...product} />);
+  render(wrappedElement(<ProductModal {...product} />));
   const modal = screen.getByTestId('product-modal');
   expect(modal).toBeInTheDocument();
 });

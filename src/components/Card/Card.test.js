@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Card from './Card';
+import wrappedElement from '../../utils/test-utils';
 
 const props = {
   categories: ['Random'],
@@ -13,7 +14,7 @@ const props = {
 };
 
 test('renders a card component', () => {
-  render(<Card {...props} />);
+  render(wrappedElement(<Card data={props} />));
   const linkElement = screen.getByText(/Despiadada y cool/);
   expect(linkElement).toBeInTheDocument();
 });

@@ -6,7 +6,7 @@ function CardList({ items }) {
   return (
     <section id="products" className="card-list">
       {items.map((item) => (
-        <Card {...item.fields} key={item.sys.id} />
+        <Card data={item.fields} key={item.sys.id} />
       ))}
     </section>
   );

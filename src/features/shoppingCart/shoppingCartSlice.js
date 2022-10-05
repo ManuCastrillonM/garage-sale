@@ -3,16 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 export const shoppingCartSlice = createSlice({
   name: 'counter',
   initialState: {
-    elementsCount: 0,
     elements: [],
   },
   reducers: {
-    increment: (state) => {
-      state.elementsCount += 1;
-    },
-    decrement: (state) => {
-      state.elementsCount -= 1;
-    },
     addElement: (state, action) => {
       state.elements.push(action.payload);
     },
@@ -23,8 +16,6 @@ export const shoppingCartSlice = createSlice({
   },
 });
 
-export const {
-  increment, decrement, addElement, removeElement,
-} = shoppingCartSlice.actions;
+export const { addElement, removeElement } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

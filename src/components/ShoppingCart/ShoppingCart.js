@@ -1,11 +1,17 @@
 import './ShoppingCart.scss';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import whatsappIcon from '../../assets/icons/whatsapp.svg';
 
 function ShoppingCart({ isOpen, handleClose }) {
-  const whatsAppUrl = `${process.env.REACT_APP_WHATSAPP_URL}?text=Hola!%20Me%20interesan%20estos%20productos%20que%20tienes%20a%20la%20venta:%20`;
+  const shoppingItems = useSelector((state) => state.shoppingCart.elements);
 
-  const shoppingItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+  const getWhatsappUrl = () => {
+    const whatsAppUrl = `${process.env.REACT_APP_WHATSAPP_URL}?text=¡Hola!%20Me%20interesan%20estos%20productos%20que%20tienes%20a%20la%20venta:%20\n`;
+    const items = shoppingItems.map((item) => item).join('%20%2B%20');
+
+    return `${whatsAppUrl}${items}`;
+  };
 
   const shoppingCartContent = () => {
     if (shoppingItems.length === 0) {
@@ -21,7 +27,7 @@ function ShoppingCart({ isOpen, handleClose }) {
           </ul>
         </div>
         <div className="shopping-cart__footer">
-          <a href={whatsAppUrl} className="shopping-cart__button" target="_blank" rel="noreferrer">
+          <a href={getWhatsappUrl()} className="shopping-cart__button" target="_blank" rel="noreferrer">
             <img src={whatsappIcon} alt="logo de whatsapp" />
             Contacto
           </a>

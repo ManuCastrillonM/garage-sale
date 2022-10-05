@@ -7,7 +7,7 @@ import cartImage from '../../assets/icons/shopping-cart.svg';
 
 function Navigation() {
   const [showShoppingCart, setShowShoppingCart] = useState(false);
-  const shoppingCartCount = useSelector((state) => state.shoppingCart.elementsCount);
+  const shoppingCartCount = useSelector((state) => state.shoppingCart.elements.length);
 
   return (
     <>

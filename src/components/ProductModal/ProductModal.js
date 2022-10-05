@@ -24,7 +24,7 @@ function ProductModal({
 
   return (
     <>
-      <section className={`modal ${displayModal ? 'active' : ''}`}>
+      <section className={`modal ${displayModal ? 'active' : ''}`} data-testid="product-modal">
         <div className="modal__image-wrapper">
           <img className="modal__image" src={coverImage} alt={name} />
         </div>

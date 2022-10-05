@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { clearProduct } from '../../features/featuredProductSlice';
+import { addElement } from '../../features/shoppingCartSlice';
 import './ProductModal.scss';
 
 function ProductModal({
@@ -21,6 +22,11 @@ function ProductModal({
 
   const closeModal = () => {
     dispatch(clearProduct());
+  };
+
+  const addToCart = () => {
+    dispatch(addElement(name));
+    closeModal();
   };
 
   return (
@@ -53,7 +59,7 @@ function ProductModal({
           }
 
           <div className="modal__ctas">
-            <button type="button" className="modal__cart">Agregar al carrito</button>
+            <button type="button" className="modal__cart" onClick={addToCart}>Agregar al carrito</button>
           </div>
         </div>
         <button type="button" className="modal__close" onClick={closeModal}>&#10006;</button>

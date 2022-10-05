@@ -27,7 +27,7 @@ function ShoppingCart({ isOpen, handleClose }) {
           </ul>
         </div>
         <div className="shopping-cart__footer">
-          <a href={getWhatsappUrl()} className="shopping-cart__button" target="_blank" rel="noreferrer">
+          <a href={getWhatsAppUrl()} className="shopping-cart__button" target="_blank" rel="noreferrer">
             <img src={whatsappIcon} alt="logo de whatsapp" />
             Contacto
           </a>

@@ -57,17 +57,20 @@
     transition: background 0.5s ease;
 
     &-button {
-      display: none;
+      color: $middle-red;
       font-size: 1.3rem;
       font-weight: bold;
       margin-right: 5px;
+
+      @include md-up {
+        display: none;
+      }
     }
 
     &:hover {
       background: rgba($light-cornflower-blue, 0.2);
 
       .shopping-cart__item-button {
-        color: $middle-red;
         display: block;
       }
     }

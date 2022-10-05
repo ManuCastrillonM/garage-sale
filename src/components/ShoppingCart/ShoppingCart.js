@@ -6,7 +6,7 @@ import whatsappIcon from '../../assets/icons/whatsapp.svg';
 function ShoppingCart({ isOpen, handleClose }) {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.elements);
 
-  const getWhatsappUrl = () => {
+  const getWhatsAppUrl = () => {
     const whatsAppUrl = `${process.env.REACT_APP_WHATSAPP_URL}?text=¡Hola!%20Me%20interesan%20estos%20productos%20que%20tienes%20a%20la%20venta:%20\n`;
     const items = shoppingCartItems.map((item) => item).join('%20%2B%20');
 

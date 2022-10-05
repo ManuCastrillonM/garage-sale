@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import CardList from './CardList';
+import wrappedElement from '../../utils/test-utils';
 
 const items = [
   {
@@ -23,6 +24,6 @@ const items = [
 ];
 
 test('renders a list of cards for the items provided', () => {
-  const { container } = render(<CardList items={items} />);
+  const { container } = render(wrappedElement(<CardList items={items} />));
   expect(container.childNodes[0].childNodes.length).toBe(items.length);
 });

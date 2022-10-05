@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import About from '../../components/About/About';
 import CardList from '../../components/CardList/CardList';
@@ -20,6 +21,7 @@ function Home() {
   });
 
   const [products, setProducts] = useState([]);
+  const featuredProduct = useSelector((state) => state.featuredProduct.product);
 
   useEffect(() => {
     client.getEntries({
@@ -41,8 +43,8 @@ function Home() {
           <ProductsBanner />
         )}
         {
-          products[0]
-          && <ProductModal {...products[0].fields} />
+          featuredProduct
+          && <ProductModal {...featuredProduct} />
         }
       </div>
       <Footer />

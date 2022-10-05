@@ -1,24 +1,11 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.modal,
-.modal__overlay {
-  display: none;
-
-  &.active {
-    display: block;
-
-    @include md-up {
-      display: flex;
-    }
-  }
-}
-
 .modal {
   background-color: $white;
   border: 4px solid $light-cornflower-blue;
   border-radius: 20px;
-  display: none;
+  display: block;
   left: 50%;
   max-height: calc(100% - 20px);
   max-width: calc(100% - 20px);
@@ -29,6 +16,7 @@
   z-index: 2;
 
   @include md-up {
+    display: flex;
     gap: 20px;
   }
 

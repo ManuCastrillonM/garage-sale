@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { clearProduct } from '../../features/featuredProductSlice';
 import './ProductModal.scss';
 
 function ProductModal({
@@ -13,18 +14,18 @@ function ProductModal({
   status,
   availabilityDate,
 }) {
+  const dispatch = useDispatch();
+
   const coverImage = (images && images[coverImageIndex].fields?.file?.url) || null;
   const displayPrice = price > 0 ? `$${price.toLocaleString()} COP` : null;
 
-  const [displayModal, setDisplayModal] = useState(false);
-
   const closeModal = () => {
-    setDisplayModal(false);
+    dispatch(clearProduct());
   };
 
   return (
     <>
-      <section className={`modal ${displayModal ? 'active' : ''}`} data-testid="product-modal">
+      <section className="modal" data-testid="product-modal">
         <div className="modal__image-wrapper">
           <img className="modal__image" src={coverImage} alt={name} />
         </div>
@@ -57,7 +58,7 @@ function ProductModal({
         </div>
         <button type="button" className="modal__close" onClick={closeModal}>&#10006;</button>
       </section>
-      <div className={`modal__overlay ${displayModal ? 'active' : ''}`} onClick={closeModal} aria-hidden="true" />
+      <div className="modal__overlay" onClick={closeModal} aria-hidden="true" />
     </>
   );
 }

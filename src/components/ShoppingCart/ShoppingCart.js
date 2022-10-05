@@ -1,10 +1,12 @@
 import './ShoppingCart.scss';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import whatsappIcon from '../../assets/icons/whatsapp.svg';
+import { removeElement } from '../../features/shoppingCart/shoppingCartSlice';
 
 function ShoppingCart({ isOpen, handleClose }) {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.elements);
+  const dispatch = useDispatch();
 
   const getWhatsAppUrl = () => {
     const whatsAppUrl = `${process.env.REACT_APP_WHATSAPP_URL}?text=¡Hola!%20Me%20interesan%20estos%20productos%20que%20tienes%20a%20la%20venta:%20\n`;
@@ -22,12 +24,27 @@ function ShoppingCart({ isOpen, handleClose }) {
         <div className="shopping-cart__content">
           <ul>
             {shoppingCartItems.map((item) => (
-              <li className="shopping-cart__item" key={item}>{item}</li>
+              <li className="shopping-cart__item" key={item}>
+                {item}
+                <button
+                  className="shopping-cart__item-button"
+                  type="button"
+                  onClick={() => dispatch(removeElement(item))}
+                  aria-label="eliminar elemento"
+                >
+                  &#10005;
+                </button>
+              </li>
             ))}
           </ul>
         </div>
         <div className="shopping-cart__footer">
-          <a href={getWhatsAppUrl()} className="shopping-cart__button" target="_blank" rel="noreferrer">
+          <a
+            href={getWhatsAppUrl()}
+            className="shopping-cart__button"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={whatsappIcon} alt="logo de whatsapp" />
             Contacto
           </a>
@@ -38,7 +55,11 @@ function ShoppingCart({ isOpen, handleClose }) {
 
   return (
     <>
-      <div className={`shopping-cart__overlay ${isOpen ? 'shopping-cart__overlay--open' : ''}`} onClick={() => handleClose()} role="presentation" />
+      <div
+        className={`shopping-cart__overlay ${isOpen ? 'shopping-cart__overlay--open' : ''}`}
+        onClick={() => handleClose()}
+        role="presentation"
+      />
 
       <div className={`shopping-cart ${isOpen ? 'shopping-cart--open' : ''}`}>
         <div className="shopping-cart__header">

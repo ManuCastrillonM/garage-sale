@@ -49,8 +49,31 @@
   }
 
   &__item {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    padding: 15px 6px;
+    transition: background 0.5s ease;
+
+    &-button {
+      color: $middle-red;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-right: 5px;
+
+      @include md-up {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background: rgba($light-cornflower-blue, 0.2);
+
+      .shopping-cart__item-button {
+        display: block;
+      }
+    }
   }
 
   &__overlay {

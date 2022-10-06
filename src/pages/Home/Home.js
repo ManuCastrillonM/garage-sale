@@ -27,7 +27,7 @@ function Home() {
     client.getEntries({
       content_type: 'product',
     }).then(((response) => {
-      setProducts(response.items);
+      setProducts(response.items.sort((a, b) => a.fields.name.localeCompare(b.fields.name)));
     }));
   }, []);
 

@@ -66,7 +66,7 @@ function ProductModal({
           }
           <p className="modal__availability">
             {
-              status === 'available' ? 'Disponible desde ya' : `Disponible desde el ${availabilityDate.substring(0, availabilityDate.indexOf('T'))}`
+              status === 'available' ? 'Disponible desde ya' : 'Disponible desde el 30 de Octubre de 2022'
             }
           </p>
           {

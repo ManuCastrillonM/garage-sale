@@ -89,12 +89,12 @@ function ProductModal({
           <div className="modal__availability">{statusLabel(status)}</div>
           {
             productUrl
-            && <a className="modal__product-url" href={productUrl}>Ver producto original</a>
+            && <a className="modal__product-url" href={productUrl} target="blank" rel="noopener noreferrer">Ver producto original</a>
           }
-          { status !== 'sold' && (
-          <div className="modal__ctas">
-            <button type="button" className="modal__cart" onClick={cta.action}>{cta.label}</button>
-          </div>
+          {status !== 'sold' && (
+            <div className="modal__ctas">
+              <button type="button" className="modal__cart" onClick={cta.action}>{cta.label}</button>
+            </div>
           )}
         </div>
         <button type="button" className="modal__close" onClick={closeModal}>&#10006;</button>

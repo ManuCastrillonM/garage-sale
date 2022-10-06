@@ -42,12 +42,12 @@ function ProductModal({
     closeModal();
   };
 
-  const availabilityElement = (ElementStatus) => {
-    if (ElementStatus === 'available') {
+  const statusLabel = (currentStatus) => {
+    if (currentStatus === 'available') {
       return (
         <span>Disponible para entrega inmediata</span>
       );
-    } if (ElementStatus === 'unavailable') {
+    } if (currentStatus === 'unavailable') {
       return (
         <span>Disponible para entrega a partir de 30/10/2022</span>
       );
@@ -86,7 +86,7 @@ function ProductModal({
             description
             && <p className="modal__description">{description}</p>
           }
-          <div className="modal__availability">{availabilityElement(status)}</div>
+          <div className="modal__availability">{statusLabel(status)}</div>
           {
             productUrl
             && <a className="modal__product-url" href={productUrl}>Ver producto original</a>

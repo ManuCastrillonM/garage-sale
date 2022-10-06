@@ -94,6 +94,11 @@
 
   &__availability {
     font-size: 13px;
+
+    &--unavailable {
+      color: $middle-red;
+      font-weight: bold;
+    }
   }
 
   &__product-url {

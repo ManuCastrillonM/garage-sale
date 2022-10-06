@@ -42,6 +42,22 @@ function ProductModal({
     closeModal();
   };
 
+  const statusLabel = (currentStatus) => {
+    if (currentStatus === 'available') {
+      return (
+        <span>Disponible para entrega inmediata</span>
+      );
+    } if (currentStatus === 'unavailable') {
+      return (
+        <span>Disponible para entrega a partir de 30/10/2022</span>
+      );
+    }
+
+    return (
+      <span className="modal__availability--unavailable">No disponible</span>
+    );
+  };
+
   const cta = shoppingCartItems.indexOf(name) === -1 ? {
     action: addToCart,
     label: 'Agregar al carrito',
@@ -70,19 +86,16 @@ function ProductModal({
             description
             && <p className="modal__description">{description}</p>
           }
-          <p className="modal__availability">
-            {
-              status === 'available' ? 'Disponible desde ya' : 'Disponible desde el 30 de Octubre de 2022'
-            }
-          </p>
+          <div className="modal__availability">{statusLabel(status)}</div>
           {
             productUrl
             && <a className="modal__product-url" href={productUrl}>Ver producto original</a>
           }
-
+          { status !== 'sold' && (
           <div className="modal__ctas">
             <button type="button" className="modal__cart" onClick={cta.action}>{cta.label}</button>
           </div>
+          )}
         </div>
         <button type="button" className="modal__close" onClick={closeModal}>&#10006;</button>
       </section>

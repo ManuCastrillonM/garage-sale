@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearProduct } from '../../features/featuredProductSlice';
 import { addElement, removeElement } from '../../features/shoppingCartSlice';
+import ImageGallery from '../ImageGallery/ImageGallery';
 import './ProductModal.scss';
 
 function ProductModal({
   name,
   categories,
-  coverImageIndex,
   description,
   images,
   price,
@@ -17,7 +17,15 @@ function ProductModal({
   const shoppingCartItems = useSelector((state) => state.shoppingCart.elements);
   const dispatch = useDispatch();
 
-  const coverImage = (images && images[coverImageIndex].fields?.file?.url) || null;
+  const imageUrls = [];
+  if (images) {
+    images.forEach((image) => {
+      if (image.fields?.file?.url) {
+        imageUrls.push(image.fields.file.url);
+      }
+    });
+  }
+
   const displayPrice = price > 0 ? `$${price.toLocaleString()} COP` : null;
 
   const closeModal = () => {
@@ -45,11 +53,10 @@ function ProductModal({
   return (
     <>
       <section className="modal" data-testid="product-modal">
-        {coverImage && (
-          <div className="modal__image-wrapper">
-            <img className="modal__image" src={coverImage} alt={name} />
-          </div>
-        )}
+        {
+          imageUrls.length > 0
+          && <ImageGallery images={imageUrls} name={name} />
+        }
         <div className="modal__content">
           <p className="modal__category">
             {categories.map((category, index) => ((index > 0) ? ', ' : '') + category)}
@@ -86,7 +93,6 @@ function ProductModal({
 ProductModal.propTypes = {
   name: PropTypes.string.isRequired,
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-  coverImageIndex: PropTypes.number,
   description: PropTypes.string,
   images: PropTypes.any,
   price: PropTypes.number,
@@ -95,7 +101,6 @@ ProductModal.propTypes = {
 };
 
 ProductModal.defaultProps = {
-  coverImageIndex: 0,
   description: null,
   images: null,
   price: 0,

@@ -56,6 +56,11 @@
     @include md-up {
       display: flex;
       flex-direction: column;
+      padding-top: 30px;
+    }
+
+    @include lg-up {
+      min-width: 300px;
     }
   }
 
@@ -73,14 +78,6 @@
   &__name {
     font-size: 28px;
     margin-top: 4px;
-
-    @include md-up {
-      min-width: 220px;
-    }
-
-    @include lg-up {
-      min-width: 300px;
-    }
   }
 
   &__price {

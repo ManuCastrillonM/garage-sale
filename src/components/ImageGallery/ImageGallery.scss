@@ -1,0 +1,53 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.gallery {
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: 90vh;
+
+  @include md-up {
+    min-width: 350px;
+  }
+
+  @include lg-up {
+    min-width: 450px;
+  }
+
+  @include xl-up {
+    min-width: 550px;
+  }
+
+  &__content {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__previous,
+  &__next {
+    background-color: $white;
+    border-radius: 50%;
+    color: $dark-blue;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include md-up {
+      height: 40px;
+      width: 40px;
+      font-size: 20px;
+    }
+  }
+
+  &__previous {
+    left: 20px;
+  }
+
+  &__next {
+    right: 20px;
+  }
+}

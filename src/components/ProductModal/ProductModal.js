@@ -46,9 +46,11 @@ function ProductModal({
   return (
     <>
       <section className="modal" data-testid="product-modal">
+        {coverImage && (
         <div className="modal__image-wrapper">
           <img className="modal__image" src={coverImage} alt={name} />
         </div>
+        )}
         <div className="modal__content">
           <p className="modal__category">
             {categories.map((category, index) => ((index > 0) ? ', ' : '') + category)}

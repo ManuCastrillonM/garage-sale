@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { clearProduct } from '../../features/featuredProductSlice';
-import { addElement } from '../../features/shoppingCartSlice';
+import { addElement, removeElement } from '../../features/shoppingCartSlice';
 import './ProductModal.scss';
 
 function ProductModal({
@@ -15,6 +15,7 @@ function ProductModal({
   status,
   availabilityDate,
 }) {
+  const shoppingCartItems = useSelector((state) => state.shoppingCart.elements);
   const dispatch = useDispatch();
 
   const coverImage = (images && images[coverImageIndex].fields?.file?.url) || null;
@@ -27,6 +28,19 @@ function ProductModal({
   const addToCart = () => {
     dispatch(addElement(name));
     closeModal();
+  };
+
+  const removeFromCart = () => {
+    dispatch(removeElement(name));
+    closeModal();
+  };
+
+  const cta = shoppingCartItems.indexOf(name) === -1 ? {
+    action: addToCart,
+    label: 'Agregar al carrito',
+  } : {
+    action: removeFromCart,
+    label: 'Remover del carrito',
   };
 
   return (
@@ -59,7 +73,7 @@ function ProductModal({
           }
 
           <div className="modal__ctas">
-            <button type="button" className="modal__cart" onClick={addToCart}>Agregar al carrito</button>
+            <button type="button" className="modal__cart" onClick={cta.action}>{cta.label}</button>
           </div>
         </div>
         <button type="button" className="modal__close" onClick={closeModal}>&#10006;</button>

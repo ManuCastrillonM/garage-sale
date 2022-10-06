@@ -6,18 +6,27 @@
   border: 4px solid $light-cornflower-blue;
   border-radius: 20px;
   display: block;
+  height: calc(100% - 20px);
   left: 50%;
-  max-height: calc(100% - 20px);
-  max-width: calc(100% - 20px);
+  max-width: 1440px;
+  overflow: scroll;
   padding: 32px;
   position: fixed;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: calc(100% - 20px);
   z-index: 2;
 
   @include md-up {
     display: flex;
     gap: 20px;
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+  }
+
+  @include md-up {
+    height: calc(100% - 80px);
+    width: calc(100% - 80px);
   }
 
   &__image-wrapper {

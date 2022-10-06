@@ -13,7 +13,6 @@ function ProductModal({
   price,
   productUrl,
   status,
-  availabilityDate,
 }) {
   const shoppingCartItems = useSelector((state) => state.shoppingCart.elements);
   const dispatch = useDispatch();
@@ -66,7 +65,7 @@ function ProductModal({
           }
           <p className="modal__availability">
             {
-              status === 'available' ? 'Disponible desde ya' : `Disponible desde el ${availabilityDate.substring(0, availabilityDate.indexOf('T'))}`
+              status === 'available' ? 'Disponible desde ya' : 'Disponible desde el 30 de Octubre de 2022'
             }
           </p>
           {
@@ -93,7 +92,6 @@ ProductModal.propTypes = {
   price: PropTypes.number,
   productUrl: PropTypes.string,
   status: PropTypes.string,
-  availabilityDate: PropTypes.any,
 };
 
 ProductModal.defaultProps = {
@@ -103,7 +101,6 @@ ProductModal.defaultProps = {
   price: 0,
   productUrl: null,
   status: null,
-  availabilityDate: null,
 };
 
 export default ProductModal;

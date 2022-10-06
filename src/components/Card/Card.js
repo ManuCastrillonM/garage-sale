@@ -19,6 +19,7 @@ function Card({ data }) {
           {data.categories.map((category, index) => ((index > 0) ? ', ' : '') + category)}
         </span>
         <span className="card__name">{data.name}</span>
+        { data.status === 'sold' && <span className="card--unavailable">no disponible</span>}
         {
           data.description
           && <span className="card__description">{data.description}</span>

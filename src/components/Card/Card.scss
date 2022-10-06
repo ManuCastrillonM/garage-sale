@@ -10,6 +10,13 @@
   position: relative;
   overflow: hidden;
 
+  &--unavailable {
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+
   &__content {
     background-color: $light-cornflower-blue;
     bottom: 0;
@@ -44,13 +51,11 @@
     &--empty {
       align-items: center;
       background:
-        repeating-linear-gradient(
-          45deg,
+        repeating-linear-gradient(45deg,
           rgba($light-cornflower-blue, 0.4),
           rgba($light-cornflower-blue, 0.4) 1rem,
           $white 1rem,
-          $white 2rem
-        );
+          $white 2rem);
       color: $dark-blue;
       display: flex;
       font-size: 1.5rem;

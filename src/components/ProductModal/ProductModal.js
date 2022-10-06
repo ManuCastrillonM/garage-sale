@@ -47,9 +47,9 @@ function ProductModal({
     <>
       <section className="modal" data-testid="product-modal">
         {coverImage && (
-        <div className="modal__image-wrapper">
-          <img className="modal__image" src={coverImage} alt={name} />
-        </div>
+          <div className="modal__image-wrapper">
+            <img className="modal__image" src={coverImage} alt={name} />
+          </div>
         )}
         <div className="modal__content">
           <p className="modal__category">

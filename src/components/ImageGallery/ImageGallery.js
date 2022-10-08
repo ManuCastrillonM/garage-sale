@@ -19,7 +19,7 @@ function ImageGallery({ images, name }) {
       behavior: 'smooth',
     });
 
-    multiplier === 1 ? setCurrentIndex(currentIndex + 1) : setCurrentIndex(currentIndex - 1);
+    setCurrentIndex(currentIndex + multiplier);
   };
 
   return (

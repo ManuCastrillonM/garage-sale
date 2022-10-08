@@ -26,7 +26,7 @@ function ImageGallery({ images, name }) {
     <div className="gallery" data-testid="gallery">
       <div className="gallery__content" ref={container}>
         {images.map((image) => (
-          <img className="gallery__image" key={image} src={image} alt={`Imagen de ${name}`} />
+          <img className="gallery__image" key={image} src={image} alt={`Imagen de ${name}`} loading="lazy" />
         ))}
       </div>
       { !isFirstImage && <button className="gallery__previous" type="button" onClick={() => moveScroll(-1)} aria-label="Anterior imagen">&#10094;</button> }

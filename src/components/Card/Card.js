@@ -10,7 +10,7 @@ function Card({ data }) {
   return (
     <div className="card">
       {coverImage ? (
-        <img className="card__image" src={coverImage} alt={data.name} />
+        <img className="card__image" src={coverImage} alt={data.name} loading="lazy" />
       ) : (
         <div className="card__image card__image--empty">{data.name}</div>
       )}

@@ -26,6 +26,7 @@ function Home() {
   useEffect(() => {
     client.getEntries({
       content_type: 'product',
+      limit: 300,
     }).then(((response) => {
       setProducts(response.items.sort((a, b) => a.fields.name.localeCompare(b.fields.name)));
     }));

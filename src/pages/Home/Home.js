@@ -24,7 +24,8 @@ function Home() {
       content_type: 'product',
       limit: 300,
     }).then(((response) => {
-      setProducts(response.items.sort((a, b) => a.fields.name.localeCompare(b.fields.name)));
+      const filteredProducts = response.items.filter((item) => item.fields.status !== 'sold');
+      setProducts(filteredProducts.sort((a, b) => a.fields.name.localeCompare(b.fields.name)));
     }));
   }, []);
 

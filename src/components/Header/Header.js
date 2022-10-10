@@ -23,6 +23,11 @@ function Header() {
     }
   };
 
+  const scrollToProducts = () => {
+    const products = document.getElementById('products');
+    products.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header className="header">
       <div className="header__container container">
@@ -34,7 +39,7 @@ function Header() {
             {' '}
             de Mango
           </h1>
-          <a className="header__cta" href="#products">Ver productos</a>
+          <button type="button" className="header__cta" onClick={scrollToProducts}>Ver productos</button>
         </div>
         <div className="header__image-container">
           <img className="header__image" onMouseEnter={(e) => animateHeader(e)} onMouseLeave={(e) => animateHeader(e)} src={headerImg} alt="Mango's face" />

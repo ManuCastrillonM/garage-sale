@@ -22,7 +22,6 @@ jobs:
           REACT_APP_CONTENTFUL_SPACE: ${{ secrets.REACT_APP_CONTENTFUL_SPACE }}
           REACT_APP_CONTENTFUL_ACCESS_TOKEN: ${{ secrets.REACT_APP_CONTENTFUL_ACCESS_TOKEN }}
           REACT_APP_WHATSAPP_URL: ${{ secrets.REACT_APP_WHATSAPP_URL }}
-          REACT_APP_QUERY_KEY: ${{ secrets.REACT_APP_QUERY_KEY }}
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:

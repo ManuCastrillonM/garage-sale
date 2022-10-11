@@ -7,6 +7,7 @@ function Card({ data }) {
   const dispatch = useDispatch();
 
   const coverImage = (data.images && data.images[0].fields?.file?.url) || null;
+  const displayPrice = data.price > 0 ? `$${data.price.toLocaleString()} COP` : null;
   return (
     <div className="card">
       {coverImage ? (
@@ -19,10 +20,10 @@ function Card({ data }) {
           {data.categories.map((category, index) => ((index > 0) ? ', ' : '') + category)}
         </span>
         <span className="card__name">{data.name}</span>
-        { data.status === 'sold' && <span className="card--unavailable">no disponible</span>}
+        {data.status === 'sold' && <span className="card--unavailable">no disponible</span>}
         {
-          data.description
-          && <span className="card__description">{data.description}</span>
+          displayPrice
+          && <span className="card__price">{displayPrice}</span>
         }
         <button
           className="card__wa"

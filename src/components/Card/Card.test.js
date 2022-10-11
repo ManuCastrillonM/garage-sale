@@ -5,7 +5,7 @@ import wrappedElement from '../../utils/test-utils';
 const props = {
   categories: ['Random'],
   dateAvailable: '01/08/2022',
-  description: 'Despiadada y cool',
+  price: '40000',
   imageUrl:
     'https://www.nationalgeographic.com.es/medio/2020/09/07/vicugna-pacos_f31442a8_550x807.jpg',
   name: 'Alpaca',
@@ -15,6 +15,6 @@ const props = {
 
 test('renders a card component', () => {
   render(wrappedElement(<Card data={props} />));
-  const linkElement = screen.getByText(/Despiadada y cool/);
+  const linkElement = screen.getByText('$40000 COP');
   expect(linkElement).toBeInTheDocument();
 });

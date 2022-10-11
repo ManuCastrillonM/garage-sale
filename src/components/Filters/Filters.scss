@@ -2,42 +2,42 @@
 @import "../../styles/variables";
 
 .filters {
-    margin: 0 auto 20px;
-    width: fit-content;
+  margin: 0 auto 20px;
+  width: fit-content;
 
-    &__form {
-        display: flex;
-        flex-direction: column;
+  &__form {
+    display: flex;
+    flex-direction: column;
 
-        &> :not(:last-child) {
-            margin-bottom: 12px;
-        }
-
-        @include md-up {
-            flex-direction: row;
-
-            &> :not(:last-child) {
-                margin-bottom: 0;
-                margin-right: 20px;
-            }
-        }
+    & > :not(:last-child) {
+      margin-bottom: 12px;
     }
 
-    &__label {
-        color: $shakespeare;
-        display: inline-grid;
-        font-size: 16px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
+    @include md-up {
+      flex-direction: row;
 
-    &__select {
-        border: 2px solid $dark-gray;
-        border-radius: 6px;
-        color: $dark-gray;
-        font-family: "Kantumruy Pro", sans-serif;
-        font-size: 18px;
-        margin-top: 3px;
-        padding: 4px 8px;
+      & > :not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 20px;
+      }
     }
+  }
+
+  &__label {
+    color: $shakespeare;
+    display: inline-grid;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__select {
+    border: 2px solid $dark-gray;
+    border-radius: 6px;
+    color: $dark-gray;
+    font-family: "Kantumruy Pro", sans-serif;
+    font-size: 18px;
+    margin-top: 3px;
+    padding: 4px 8px;
+  }
 }

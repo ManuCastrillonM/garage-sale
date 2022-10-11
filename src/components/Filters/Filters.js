@@ -32,24 +32,28 @@ function Filters() {
       <form className="filters__form">
         <CustomSelect items={categories} onChange={onCategoriesChange} />
 
-        <label htmlFor="state" className="filters__label">
-          estado
-          <select name="state" id="state" className="filters__select">
-            <option value="test">Disponible</option>
-            <option value="test">No disponible</option>
-            <option value="test">Todos</option>
-          </select>
-        </label>
+        <div className="filters__select-wrapper">
+          <label htmlFor="state" className="filters__label">
+            estado
+            <select name="state" id="state" className="filters__select">
+              <option value="test">Disponible</option>
+              <option value="test">No disponible</option>
+              <option value="test">Todos</option>
+            </select>
+          </label>
+        </div>
 
-        <label htmlFor="order" className="filters__label">
-          orden
-          <select name="order" id="order" className="filters__select">
-            <option value="test">Alfabético (A-Z)</option>
-            <option value="test">Alfabético (Z-A)</option>
-            <option value="test">Precio (menor a mayor)</option>
-            <option value="test">Precio (mayor a menor)</option>
-          </select>
-        </label>
+        <div className="filters__select-wrapper">
+          <label htmlFor="order" className="filters__label">
+            orden
+            <select name="order" id="order" className="filters__select">
+              <option value="test">Alfabético (A-Z)</option>
+              <option value="test">Alfabético (Z-A)</option>
+              <option value="test">Precio (menor a mayor)</option>
+              <option value="test">Precio (mayor a menor)</option>
+            </select>
+          </label>
+        </div>
       </form>
     </div>
   );

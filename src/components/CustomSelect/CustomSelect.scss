@@ -1,69 +1,54 @@
+@import "../../styles/global";
 @import "../../styles/variables";
 
 .cst-select {
-  display: flex;
-  flex-direction: column;
-  min-width: 150px;
-  position: relative;
-
-  &__button {
-    border: 2px solid $dark-gray;
-    border-radius: 6px;
-    color: $dark-gray;
-    font-size: 18px;
-    height: 40px;
-    margin-top: 3px;
-    padding: 4px 8px;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
     position: relative;
-    text-align: left;
 
-    &::after {
-      content: "";
-      border-left: 4px solid transparent;
-      border-right: 4px solid transparent;
-      border-top: 4px solid;
-      bottom: 50%;
-      margin-left: 4px;
-      position: absolute;
-      right: 7px;
-      top: 45%;
+    &__button {
+        @extend %select;
+
+        &::after {
+            @extend %select-arrow;
+        }
     }
-  }
 
-  &__checkbox {
-    margin-right: 5px;
-  }
-
-  &__item {
-    margin-bottom: 10px;
-  }
-
-  &__label {
-    color: $shakespeare;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-  }
-
-  &__list {
-    width: max-content;
-
-    &-container {
-      background: white;
-      border: 2px solid $dark-gray;
-      border-radius: 6px;
-      display: none;
-      left: 0;
-      padding: 10px 16px;
-      position: absolute;
-      top: 0;
-      transform: translateY(64px);
-      z-index: 2;
-
-      &--visible {
-        display: block;
-      }
+    &__checkbox {
+        margin-right: 5px;
     }
-  }
+
+    &__item {
+        margin-bottom: 10px;
+    }
+
+    &__label {
+        color: $shakespeare;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        width: max-content;
+
+        &-container {
+            background: white;
+            border: 2px solid $dark-gray;
+            border-radius: 6px;
+            display: none;
+            left: 0;
+            padding: 10px 16px;
+            position: absolute;
+            top: 0;
+            transform: translateY(64px);
+            z-index: 2;
+
+            &--visible {
+                display: block;
+            }
+        }
+    }
 }

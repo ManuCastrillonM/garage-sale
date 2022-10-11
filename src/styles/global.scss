@@ -39,3 +39,26 @@ img {
   margin: 0 auto;
   max-width: 1440px;
 }
+
+%select {
+  border: 2px solid $dark-gray;
+  border-radius: 6px;
+  color: $dark-gray;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 18px;
+  height: 40px;
+  margin-top: 3px;
+  text-align: left;
+  padding: 4px 8px;
+}
+
+%select-arrow {
+  content: "";
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid;
+  bottom: 20px;
+  margin-left: 4px;
+  position: absolute;
+  right: 7px;
+}

@@ -10,14 +10,14 @@
     display: flex;
     flex-direction: column;
 
-    &> :not(:last-child) {
+    & > :not(:last-child) {
       margin-bottom: 12px;
     }
 
     @include md-up {
       flex-direction: row;
 
-      &> :not(:last-child) {
+      & > :not(:last-child) {
         margin-bottom: 0;
         margin-right: 20px;
       }
@@ -34,8 +34,8 @@
 
   &__select {
     @extend %select;
-    appearance: none;
 
+    appearance: none;
 
     &-wrapper {
       display: flex;
@@ -45,6 +45,5 @@
         @extend %select-arrow;
       }
     }
-
   }
 }

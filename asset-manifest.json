@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/garage-sale/static/css/main.bcbea9a2.css",
-    "main.js": "/garage-sale/static/js/main.daf7c7f1.js",
+    "main.css": "/garage-sale/static/css/main.43dfca20.css",
+    "main.js": "/garage-sale/static/js/main.766ff76d.js",
     "static/js/787.07c740fa.chunk.js": "/garage-sale/static/js/787.07c740fa.chunk.js",
     "static/media/header-image.png": "/garage-sale/static/media/header-image.148e2aea660784c4e9be.png",
     "static/media/header_background.svg": "/garage-sale/static/media/header_background.7f9398c573c7c6729707.svg",
     "static/media/shopping-cart.svg": "/garage-sale/static/media/shopping-cart.cc51231a412cbdf7bb223ea5643b5e3e.svg",
     "static/media/whatsapp.svg": "/garage-sale/static/media/whatsapp.55253fc95d36f1c1c16685de453e547a.svg",
     "index.html": "/garage-sale/index.html",
-    "main.bcbea9a2.css.map": "/garage-sale/static/css/main.bcbea9a2.css.map",
-    "main.daf7c7f1.js.map": "/garage-sale/static/js/main.daf7c7f1.js.map",
+    "main.43dfca20.css.map": "/garage-sale/static/css/main.43dfca20.css.map",
+    "main.766ff76d.js.map": "/garage-sale/static/js/main.766ff76d.js.map",
     "787.07c740fa.chunk.js.map": "/garage-sale/static/js/787.07c740fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bcbea9a2.css",
-    "static/js/main.daf7c7f1.js"
+    "static/css/main.43dfca20.css",
+    "static/js/main.766ff76d.js"
   ]
 }

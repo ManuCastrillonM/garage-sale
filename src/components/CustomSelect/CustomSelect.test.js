@@ -8,7 +8,7 @@ test('renders the custom select', () => {
   const mockOnChange = jest.fn();
 
   render(wrappedElement(
-    <CustomSelect items={items} selectedItems={selectedItems} onChange={mockOnChange} />,
+    <CustomSelect items={items} selectedItems={selectedItems} onSelectChange={mockOnChange} />,
   ));
 
   const selectItems = screen.getAllByRole('checkbox');

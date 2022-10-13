@@ -75,7 +75,7 @@ function Filters() {
         <CustomSelect
           items={categories}
           selectedItems={selectedCategories}
-          onChange={onCategoriesChange}
+          onSelectChange={onCategoriesChange}
         />
 
         <div className="filters__select-wrapper">

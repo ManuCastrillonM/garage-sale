@@ -2,7 +2,7 @@ import './CustomSelect.scss';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function CustomSelect({ items, selectedItems, onChange }) {
+function CustomSelect({ items, selectedItems, onSelectChange }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const onItemChange = (event) => {
@@ -10,7 +10,7 @@ function CustomSelect({ items, selectedItems, onChange }) {
       ? [...selectedItems, event.target.value]
       : selectedItems.filter((item) => item !== event.target.value);
 
-    onChange(newItemList);
+    onSelectChange(newItemList);
   };
 
   return (
@@ -39,7 +39,7 @@ function CustomSelect({ items, selectedItems, onChange }) {
 
 CustomSelect.propTypes = {
   items: PropTypes.arrayOf(String).isRequired,
-  onChange: PropTypes.func.isRequired,
+  onSelectChange: PropTypes.func.isRequired,
   selectedItems: PropTypes.arrayOf(String).isRequired,
 };
 

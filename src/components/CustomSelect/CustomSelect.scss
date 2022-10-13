@@ -4,11 +4,16 @@
 .cst-select {
   display: flex;
   flex-direction: column;
-  min-width: 150px;
+  width: 300px;
   position: relative;
 
   &__button {
     @extend %select;
+
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     &::after {
       @extend %select-arrow;

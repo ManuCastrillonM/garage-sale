@@ -26,7 +26,6 @@ const categoriesOptions = [
   'Tecnología',
   'Hobbies',
   'Organización',
-  'Todos',
 ];
 
 const orderOptions = [{

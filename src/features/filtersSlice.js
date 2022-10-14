@@ -5,7 +5,7 @@ export const filtersSlice = createSlice({
   initialState: {
     availability: 'available',
     order: 'alphabetical-az',
-    categories: [],
+    categories: ['Todos'],
   },
   reducers: {
     setAvailability: (state, action) => {

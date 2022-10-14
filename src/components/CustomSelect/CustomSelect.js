@@ -16,22 +16,19 @@ function CustomSelect({ items, selectedItems, onSelectChange }) {
   return (
     <div className="cst-select">
       <span className="cst-select__label">categorias</span>
-      <button type="button" className="cst-select__button" onClick={() => setIsOpen(!isOpen)}>
-        {selectedItems.length ? selectedItems.join(', ') : 'Todas'}
-      </button>
+      <button type="button" className="cst-select__button" onClick={() => setIsOpen(!isOpen)}>{selectedItems.join(', ')}</button>
       <div className={`cst-select__list-container ${isOpen ? 'cst-select__list-container--visible' : ''}`}>
         <ul className="cst-select__list">
           {items.map((category) => (
             <li className="cst-select__item" key={category}>
               <input
-                id={`category-${category}`}
                 type="checkbox"
                 className="cst-select__checkbox"
                 onChange={onItemChange}
                 value={category}
                 checked={selectedItems.includes(category)}
               />
-              <label htmlFor={`category-${category}`}>{category}</label>
+              {category}
             </li>
           ))}
         </ul>

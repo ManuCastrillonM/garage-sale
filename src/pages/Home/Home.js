@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import About from '../../components/About/About';
@@ -7,7 +7,6 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Navigation from '../../components/Navigation/Navigation';
 import ProductModal from '../../components/ProductModal/ProductModal';
-import Filters from '../../components/Filters/Filters';
 
 const contentful = require('contentful');
 
@@ -17,23 +16,7 @@ function Home() {
     accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const categoriesFilter = useSelector((state) => state.filters.categories);
-  const availabilityFilter = useSelector((state) => state.filters.availability);
-
   const [products, setProducts] = useState([]);
-
-  const filteredProducts = useMemo(() => products.filter((product) => {
-    const isAvailable = availabilityFilter === 'all'
-      || (availabilityFilter === 'available'
-        ? product.fields.status === ('available' || 'unavailable')
-        : product.fields.status === availabilityFilter);
-
-    const isInCategories = categoriesFilter.length === 0
-      || categoriesFilter.some((category) => product.fields.categories.includes(category));
-
-    return isAvailable && isInCategories;
-  }), [products, categoriesFilter, availabilityFilter]);
-
   const featuredProduct = useSelector((state) => state.featuredProduct.product);
 
   useEffect(() => {
@@ -41,7 +24,8 @@ function Home() {
       content_type: 'product',
       limit: 300,
     }).then(((response) => {
-      setProducts(response.items);
+      const filteredProducts = response.items.filter((item) => item.fields.status !== 'sold');
+      setProducts(filteredProducts.sort((a, b) => a.fields.name.localeCompare(b.fields.name)));
     }));
   }, []);
 
@@ -51,8 +35,7 @@ function Home() {
         <Navigation />
         <Header />
         <About />
-        <Filters />
-        <CardList items={filteredProducts} />
+        <CardList items={products} />
         {
           featuredProduct
           && <ProductModal {...featuredProduct} />

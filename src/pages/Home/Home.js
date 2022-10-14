@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import About from '../../components/About/About';
@@ -7,6 +7,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Navigation from '../../components/Navigation/Navigation';
 import ProductModal from '../../components/ProductModal/ProductModal';
+import Filters from '../../components/Filters/Filters';
 
 const contentful = require('contentful');
 
@@ -16,7 +17,23 @@ function Home() {
     accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
   });
 
+  const categoriesFilter = useSelector((state) => state.filters.categories);
+  const availabilityFilter = useSelector((state) => state.filters.availability);
+
   const [products, setProducts] = useState([]);
+
+  const filteredProducts = useMemo(() => products.filter((product) => {
+    const isAvailable = availabilityFilter === 'all'
+      || (availabilityFilter === 'available'
+        ? product.fields.status === ('available' || 'unavailable')
+        : product.fields.status === availabilityFilter);
+
+    const isInCategories = categoriesFilter.length === 0
+      || categoriesFilter.some((category) => product.fields.categories.includes(category));
+
+    return isAvailable && isInCategories;
+  }), [products, categoriesFilter, availabilityFilter]);
+
   const featuredProduct = useSelector((state) => state.featuredProduct.product);
 
   useEffect(() => {
@@ -24,8 +41,7 @@ function Home() {
       content_type: 'product',
       limit: 300,
     }).then(((response) => {
-      const filteredProducts = response.items.filter((item) => item.fields.status !== 'sold');
-      setProducts(filteredProducts.sort((a, b) => a.fields.name.localeCompare(b.fields.name)));
+      setProducts(response.items);
     }));
   }, []);
 
@@ -35,7 +51,8 @@ function Home() {
         <Navigation />
         <Header />
         <About />
-        <CardList items={products} />
+        <Filters />
+        <CardList items={filteredProducts} />
         {
           featuredProduct
           && <ProductModal {...featuredProduct} />

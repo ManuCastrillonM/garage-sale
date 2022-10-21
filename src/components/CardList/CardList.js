@@ -10,9 +10,9 @@ function CardList({ items }) {
   const sortedItems = useMemo(() => {
     switch (orderType) {
       case 'price-low-high':
-        return items.sort((a, b) => a.fields.price || 0 - b.fields.price || 0);
+        return items.sort((a, b) => (a.fields.price || 0) - (b.fields.price || 0));
       case 'price-high-low':
-        return items.sort((a, b) => b.fields.price || 0 - a.fields.price || 0);
+        return items.sort((a, b) => (b.fields.price || 0) - (a.fields.price || 0));
       case 'alphabetical-az':
         return [...items].sort((a, b) => a.fields.name.localeCompare(b.fields.name));
       case 'alphabetical-za':

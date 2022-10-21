@@ -49,7 +49,7 @@ function ProductModal({
       );
     } if (currentStatus === 'unavailable') {
       return (
-        <span>Disponible para entrega a partir de 30/10/2022</span>
+        <span>Disponible para entrega a partir de 10/11/2022</span>
       );
     }
 

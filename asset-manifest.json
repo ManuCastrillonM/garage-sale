@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/garage-sale/static/css/main.aa416843.css",
+    "main.css": "/garage-sale/static/css/main.55517dc8.css",
     "main.js": "/garage-sale/static/js/main.a4852fc1.js",
     "static/js/787.07c740fa.chunk.js": "/garage-sale/static/js/787.07c740fa.chunk.js",
     "static/media/header-image.png": "/garage-sale/static/media/header-image.148e2aea660784c4e9be.png",
@@ -8,12 +8,12 @@
     "static/media/shopping-cart.svg": "/garage-sale/static/media/shopping-cart.cc51231a412cbdf7bb223ea5643b5e3e.svg",
     "static/media/whatsapp.svg": "/garage-sale/static/media/whatsapp.55253fc95d36f1c1c16685de453e547a.svg",
     "index.html": "/garage-sale/index.html",
-    "main.aa416843.css.map": "/garage-sale/static/css/main.aa416843.css.map",
+    "main.55517dc8.css.map": "/garage-sale/static/css/main.55517dc8.css.map",
     "main.a4852fc1.js.map": "/garage-sale/static/js/main.a4852fc1.js.map",
     "787.07c740fa.chunk.js.map": "/garage-sale/static/js/787.07c740fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa416843.css",
+    "static/css/main.55517dc8.css",
     "static/js/main.a4852fc1.js"
   ]
 }
